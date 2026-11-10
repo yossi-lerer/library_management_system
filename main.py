@@ -6,7 +6,7 @@ from user_input import num_input, text_input
 def main():
     while True:
         show_menu()
-        menu_select = num_input("Choose an option: ")
+        menu_select = num_input("Choose an option between 1 - 8: ")
         if menu_select == 1:
             display_books(BOOKS)
         if menu_select == 2:
@@ -22,11 +22,9 @@ def main():
         if menu_select == 4:
             book_id = num_input("please enter book id: ")
             borrow_book(BOOKS, book_id)
-            display_books(BOOKS)
         if menu_select == 5:
             book_id = num_input("please enter book id: ")
             return_book(BOOKS, book_id)
-            display_books(BOOKS)
         if menu_select == 6:
             display_books(get_available_books(BOOKS))
         if menu_select == 7:
@@ -34,6 +32,8 @@ def main():
             display_books(get_books_by_author(BOOKS, book_author))
         if menu_select == 8:
             break
+        else:
+            print("please enter num between 1 - 8")
 
 if __name__ == "__main__":
     main()
