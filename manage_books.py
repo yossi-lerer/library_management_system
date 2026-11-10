@@ -34,7 +34,7 @@ def borrow_book(books, book_id):
             else:
                 print("the book is not available")
             return
-        print("the book not found")
+    print("the book not found")
 
 def return_book(books, book_id):
     for index, book in enumerate(books):
@@ -44,7 +44,7 @@ def return_book(books, book_id):
                 display_books([book])
             else:
                 print("the book is already return")
-        return
+            return
     print("the book not found")
     
 
