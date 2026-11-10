@@ -33,12 +33,5 @@ BOOKS = [
                 "author": "David Thomas",
                 "year": 1999,
                 "available": False
-            },
-            {       
-                "id": 6,
-                "name": "The PYTHON Programmer",
-                "author": "David Thomas",
-                "year": 2025,
-                "available": False
             }
         ]

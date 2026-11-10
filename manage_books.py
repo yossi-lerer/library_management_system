@@ -12,7 +12,7 @@ def search_book(books, name):
             return book
 
 def add_book(books, name, author, year):
-    book = {
+    new_book = {
         "id": get_next_book_id(books),
         "name": name,
         "author": author,
@@ -23,7 +23,7 @@ def add_book(books, name, author, year):
         if book["name"] == name and book["author"] == author:
             print("the book is already in the library")
             return
-    books.append(book)
+    books.append(new_book)
 
 def borrow_book(books, book_id):
     for index, book in enumerate(books):

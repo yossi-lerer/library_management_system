@@ -6,5 +6,7 @@ def num_input(msg):
     return int(user_num_input)
 
 def text_input(msg):
-    user_text_input = input(msg)
+    user_text_input = ""
+    while not validation_text(user_text_input):
+        user_text_input = input(msg)
     return user_text_input
