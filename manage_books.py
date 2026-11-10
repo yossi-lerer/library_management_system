@@ -1,9 +1,10 @@
 def display_books(books):
-    for index in books:
-        print(f"\n================================")
-        for key, value in index.items():
-            print(f"{key}: {value}")
-        print(f"================================")
+    if books:
+        for index in books:
+            print(f"\n================================")
+            for key, value in index.items():
+                print(f"{key}: {value}")
+            print(f"================================")
 
 def search_book(books, name):
     for book in books:
@@ -18,18 +19,34 @@ def add_book(books, name, author, year):
         "year": year,
         "available": True
         }
+    for book in books:
+        if book["name"] == name and book["author"] == author:
+            print("the book is already in the library")
+            return
     books.append(book)
 
 def borrow_book(books, book_id):
     for index, book in enumerate(books):
         if book_id == book["id"]:
-            books[index]["available"] = False
+            if books[index]["available"]:
+                books[index]["available"] = False
+                display_books([book])
+            else:
+                print("the book is not available")
+            return
+        print("the book not found")
 
 def return_book(books, book_id):
     for index, book in enumerate(books):
         if book_id == book["id"]:
-            books[index]["available"] = True
-
+            if not books[index]["available"]:
+                books[index]["available"] = True
+                display_books([book])
+            else:
+                print("the book is already return")
+        return
+    print("the book not found")
+    
 
 def get_available_books(books):
     return filter(lambda b: b["available"] == True, books)
